@@ -10,8 +10,20 @@ const style = StyleSheet.create({
   },
 });
 
-const CenterView: React.FC = ({ children }) => {
+export const CenterView: React.FC = ({ children }) => {
   return <View style={style.main}>{children}</View>;
 };
 
-export default CenterView;
+interface SpaceProps {
+  height?: number;
+  width?: number;
+}
+
+export const Space: React.FC<SpaceProps> = ({ width, height }) => (
+  <View
+    style={{
+      width: width || 1,
+      height: height || 1,
+    }}
+  />
+);
