@@ -10,6 +10,7 @@
     "lint": "eslint --fix --ext .js,jsx,.ts,.tsx",
     "lint:ci": "eslint --quiet --ext .js,jsx,.ts,.tsx .",
     "start": "expo start",
+    "test": "jest",
     "web": "expo start --web"
   },
   "husky": {
@@ -58,14 +59,19 @@
     "@storybook/addon-links": "^5.3.18",
     "@storybook/addons": "^5.3.18",
     "@storybook/react-native": "^5.3.18",
+    "@testing-library/react-native": "^5.0.3",
+    "@types/jest": "^25.2.1",
     "@types/react": "~16.9.23",
     "@types/react-native": "~0.61.17",
     "babel-loader": "^8.1.0",
     "babel-preset-expo": "~8.1.0",
     "eslint": "^6.8.0",
     "husky": "^4.2.5",
+    "jest": "^26.0.1",
+    "jest-expo": "^37.0.0",
     "lint-staged": "^10.2.2",
     "prettier": "^2.0.5",
+    "react-test-renderer": "^16.13.1",
     "sort-package-json": "^1.42.2",
     "typescript": "~3.8.3"
   }
