@@ -13,5 +13,5 @@ function App() {
  * is commented below.
  */
 
-// export default App;
-export { default } from './storybook';
+export default App;
+// export { default } from './storybook';

@@ -18,7 +18,14 @@ interface ButtonProps {
 
 const Button: React.FC<ButtonProps> = ({ text, onPress, colors, textStyle, linearBgProps }) => {
   const renderTouchableWithStyles = (styles: any[] = []) => (
-    <TouchableOpacity style={[s.wrapper, t.p3, ...styles]} onPress={onPress} activeOpacity={0.8}>
+    <TouchableOpacity
+      style={[s.wrapper, t.p3, ...styles]}
+      onPress={onPress}
+      activeOpacity={0.2}
+      hitSlop={{
+        left: 200,
+        right: 200,
+      }}>
       <Text style={[s.buttonText, textStyle]} testID="button-text">
         {text}
       </Text>
@@ -31,7 +38,7 @@ const Button: React.FC<ButtonProps> = ({ text, onPress, colors, textStyle, linea
         colors={colors.map((color) => (typeof color === 'string' ? color : color.backgroundColor))}
         style={s.wrapper}
         {...linearBgProps}>
-        {renderTouchableWithStyles()}
+        {renderTouchableWithStyles([t.w11_12])}
       </LinearGradient>
     );
   } else {

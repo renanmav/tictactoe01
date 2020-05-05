@@ -1,27 +1,28 @@
 import React from 'react';
-import { Text, TouchableOpacity, View } from 'react-native';
+import { Dimensions, Image, ImageBackground, StatusBar, Text, View } from 'react-native';
 import { t } from 'react-native-tailwindcss';
+import Button from '../components/Button';
 
 const s = {
-  background: [t.hFull, t.itemsCenter, t.bgGray500, t.p12, t.pT40],
-  card: [t.bgWhite, t.wFull, t.p6, t.rounded, t.itemsCenter],
-  title: [t.textGray800, t.textXl, t.fontMedium, t.mT0],
-  description: [t.textGray600, t.textCenter, t.mT2, t.w56],
-  button: [t.bgIndigo600, t.wFull, t.pY2, t.itemsCenter, t.roundedSm, t.mT6],
-  buttonText: [t.textWhite, t.fontMedium],
+  background: [t.itemsCenter, t.justifyCenter],
+  logo: [t.w4_12, t.objectContain],
+  headline: [t.textWhite, t.textLg, t.fontMedium, t.mB12],
 };
+
+const { width, height } = Dimensions.get('window');
 
 const Menu: React.FC = () => {
   return (
-    <View style={s.background}>
-      <View style={s.card}>
-        <Text style={s.title}>Payment successful</Text>
-        <Text style={s.description}>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</Text>
-        <TouchableOpacity style={s.button}>
-          <Text style={s.buttonText}>Go back to dashboard</Text>
-        </TouchableOpacity>
-      </View>
-    </View>
+    <ImageBackground
+      source={require('../../assets/background.jpg')}
+      style={[s.background, { width, height }]}>
+      <StatusBar barStyle="light-content" />
+      <Image source={require('../../assets/xo.png')} style={s.logo} />
+      <Text style={s.headline}>Ta afim de uma partida?</Text>
+      <Button text="Jogar" onPress={() => {}} colors={[t.bgGreen700, t.bgGreen800]} />
+      <View style={[t.mB8]} />
+      <Button text="Ver placar" onPress={() => {}} colors={[t.bgGreen700, t.bgGreen800]} />
+    </ImageBackground>
   );
 };
 
