@@ -15,3 +15,5 @@ web-report/
 .expo-shared
 .idea
 .vscode
+*error.log
+.editorconfig
