@@ -1,9 +1,9 @@
-name: Linting
+name: Tests
 on: [push]
 
 jobs:
   lint:
-    name: Lint all code
+    name: Test app
     runs-on: ubuntu-latest
     if: "!contains(github.event.head_commit.message , '[skip ci]')"
 
@@ -27,6 +27,6 @@ jobs:
         run: |
           yarn config set unsafe-disable-integrity-migration true -g
           yarn install --frozen-lockfile --production=false --non-interactive --cache-folder $(yarn cache dir)
-      - name: Lint
+      - name: Test
         run: |
-          yarn lint:ci
+          yarn test
