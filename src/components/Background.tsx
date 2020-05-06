@@ -11,7 +11,7 @@ const { width, height } = Dimensions.get('window');
 const Background: React.FC = ({ children }) => {
   return (
     <ImageBackground
-      source={require('../assets/background.jpg')}
+      source={require('../../assets/background.jpg')}
       style={[s.background, { width, height }]}>
       <StatusBar barStyle="light-content" />
       {children}
