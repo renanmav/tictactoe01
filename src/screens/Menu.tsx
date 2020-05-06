@@ -10,6 +10,7 @@ import Background from '../components/Background';
 const s = {
   logo: [t.objectContain, { width: 150, height: 150 }],
   headline: [t.textWhite, t.textLg, t.fontMedium, t.mB12],
+  buttonColors: [t.bgGreen700, t.bgGreen800],
 };
 
 type MenuScreenNavigationProp = StackNavigationProp<MainStackParamList, 'Menu'>;
@@ -27,11 +28,11 @@ const Menu: React.FC<MenuProps> = ({ navigation }) => {
         onPress={() => {
           navigation.navigate('SelectDifficulty');
         }}
-        colors={[t.bgGreen700, t.bgGreen800]}
+        colors={s.buttonColors}
         testID="button-jogar"
       />
       <View style={[t.mB8]} />
-      <Button text="Ver placar" onPress={() => {}} colors={[t.bgGreen700, t.bgGreen800]} />
+      <Button text="Ver placar" onPress={() => {}} colors={s.buttonColors} />
     </Background>
   );
 };
