@@ -48,13 +48,33 @@ const SelectDifficulty: React.FC<SelectDifficultyProps> = ({ navigation }) => {
           <Text style={s.title}>Quer jogar em</Text>
           <Text style={s.title}>qual dificuldade?</Text>
           <View style={{ height: 60 }} />
-          <Button text="Fácil" onPress={() => setDifficulty('easy')} colors={s.buttonColors} />
+          <Button
+            text="Fácil"
+            onPress={() => setDifficulty('easy')}
+            colors={s.buttonColors}
+            testID="easy-dif"
+          />
           <View style={{ height: 30 }} />
-          <Button text="Médio" onPress={() => setDifficulty('medium')} colors={s.buttonColors} />
+          <Button
+            text="Médio"
+            onPress={() => setDifficulty('medium')}
+            colors={s.buttonColors}
+            testID="medium-dif"
+          />
           <View style={{ height: 30 }} />
-          <Button text="Difícil" onPress={() => setDifficulty('hard')} colors={s.buttonColors} />
+          <Button
+            text="Difícil"
+            onPress={() => setDifficulty('hard')}
+            colors={s.buttonColors}
+            testID="hard-dif"
+          />
           <View style={{ height: 30 }} />
-          <Button text="Ninja" onPress={() => setDifficulty('expert')} colors={s.buttonColors} />
+          <Button
+            text="Ninja"
+            onPress={() => setDifficulty('expert')}
+            colors={s.buttonColors}
+            testID="expert-dif"
+          />
         </View>
       </SafeAreaView>
     </Background>
