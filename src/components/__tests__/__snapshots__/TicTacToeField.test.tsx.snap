@@ -1,0 +1,66 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render the correct symbol 1`] = `
+<Image
+  source={1}
+  style={
+    Array [
+      Object {
+        "width": "66.666667%",
+      },
+      Object {
+        "resizeMode": "contain",
+      },
+    ]
+  }
+  testID="X"
+/>
+`;
+
+exports[`should render the correct symbol 2`] = `
+<Image
+  source={1}
+  style={
+    Array [
+      Object {
+        "width": "66.666667%",
+      },
+      Object {
+        "resizeMode": "contain",
+      },
+    ]
+  }
+  testID="O"
+/>
+`;
+
+exports[`should render the correct symbol 3`] = `
+<View
+  style={
+    Array [
+      Array [
+        Object {
+          "backgroundColor": "#242c3a",
+        },
+        Object {
+          "borderRadius": 4,
+        },
+        Object {
+          "flex": 1,
+        },
+        Object {
+          "alignItems": "center",
+        },
+        Object {
+          "justifyContent": "center",
+        },
+        Object {
+          "overflow": "hidden",
+        },
+      ],
+      false,
+    ]
+  }
+  testID="field-background"
+/>
+`;
