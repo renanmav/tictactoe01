@@ -1,3 +1,5 @@
+const { colors } = require('tailwindcss/defaultTheme');
+
 module.exports = {
   theme: {
     extend: {
@@ -12,6 +14,11 @@ module.exports = {
           '700': '#abcc02',
           '800': '#96b301',
           '900': '#809901',
+        },
+        blue: {
+          ...colors.blue,
+          '800': '#2D3748',
+          '900': '#242c3a',
         },
       },
     },
