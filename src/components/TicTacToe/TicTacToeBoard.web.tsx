@@ -32,7 +32,7 @@ const TicTacToeBoard: React.FC<TicTacToeBoardProps> = ({ board, onPress, match }
   }
 
   return (
-    <View style={s.board}>
+    <View style={s.board} testID="tictactoe-board">
       {board.split('').map((symbol, index) => (
         <TicTacToeField
           key={index}

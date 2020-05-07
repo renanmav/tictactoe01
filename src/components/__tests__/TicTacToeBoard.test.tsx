@@ -4,7 +4,9 @@ import { fireEvent, render } from '@testing-library/react-native';
 import TicTacToeBoard from '../TicTacToe/TicTacToeBoard';
 
 it('should render the board correctly', async () => {
-  const { queryAllByTestId } = render(<TicTacToeBoard board="X O     X" onPress={jest.fn} />);
+  const { queryAllByTestId } = render(
+    <TicTacToeBoard board="X O     X" onPress={jest.fn} match={[]} />
+  );
 
   expect(queryAllByTestId('X')).toMatchSnapshot();
   expect(queryAllByTestId('X').length).toBe(2);
@@ -16,10 +18,20 @@ it('should call on press with index when pressed', async () => {
   const onPress = jest.fn();
   const index = 3;
 
-  const { queryAllByTestId } = render(<TicTacToeBoard board="X O     X" onPress={onPress} />);
+  const { queryAllByTestId } = render(
+    <TicTacToeBoard board="X O     X" onPress={onPress} match={[]} />
+  );
 
   fireEvent.press(queryAllByTestId('field-touchable')[index]);
 
   expect(onPress).toBeCalledTimes(1);
   expect(onPress).toBeCalledWith(index);
+});
+
+it('should render fields with different colors based on match prop', async () => {
+  const { getByTestId } = render(
+    <TicTacToeBoard board="X OOX   X" onPress={jest.fn} match={[0, 4, 8]} />
+  );
+
+  expect(getByTestId('tictactoe-board')).toMatchSnapshot();
 });
