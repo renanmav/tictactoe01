@@ -10,9 +10,9 @@ interface TicTacToeProps {
 }
 
 const TicTacToe: React.FC<TicTacToeProps> = ({ difficulty }) => {
-  const { board, updateBoard } = useBoard(difficulty);
+  const { board, updateBoard, match } = useBoard(difficulty);
 
-  return <TicTacToeBoard board={board} onPress={(i) => updateBoard(i, 'X')} />;
+  return <TicTacToeBoard board={board} onPress={(i) => updateBoard(i, 'X')} match={match} />;
 };
 
 export default TicTacToe;

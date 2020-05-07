@@ -11,9 +11,10 @@ const s = {
 interface TicTacToeBoardProps {
   board: string;
   onPress(index: number): void;
+  match: number[];
 }
 
-const TicTacToeBoard: React.FC<TicTacToeBoardProps> = ({ board, onPress }) => {
+const TicTacToeBoard: React.FC<TicTacToeBoardProps> = ({ board, onPress, match }) => {
   if (board.length !== 9) {
     throw new Error('Board should have 9 characters');
   }
@@ -27,6 +28,7 @@ const TicTacToeBoard: React.FC<TicTacToeBoardProps> = ({ board, onPress }) => {
           onPress={() => {
             onPress(index);
           }}
+          success={!!match.includes(index)}
         />
       ))}
     </View>
