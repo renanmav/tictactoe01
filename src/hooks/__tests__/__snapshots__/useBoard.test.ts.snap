@@ -1,6 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`useBoard if all fields are returned 1`] = `Array []`;
+exports[`useBoard if all fields are returned 1`] = `
+Object {
+  "board": "         ",
+  "match": Array [],
+  "updateBoard": [Function],
+  "winner": "?",
+}
+`;
 
 exports[`useBoard if board is updated and it is my turn, a new board is returned 1`] = `
 Array [

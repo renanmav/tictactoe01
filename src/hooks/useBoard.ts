@@ -22,8 +22,6 @@ export function useBoard(difficulty: Difficulties) {
       return;
     }
 
-    setIsMyTurn(true);
-
     (async () => {
       const body = {
         board,
@@ -38,6 +36,7 @@ export function useBoard(difficulty: Difficulties) {
       });
       const data = await resp.json();
       if (isCurrent) {
+        setIsMyTurn(true);
         setBoard(data.board);
       }
     })();

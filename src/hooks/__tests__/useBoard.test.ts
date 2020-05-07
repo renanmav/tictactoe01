@@ -12,11 +12,9 @@ describe('useBoard', () => {
   test('if all fields are returned', () => {
     const { result } = renderHook(() => useBoard('easy'));
 
-    expect(result.current.board).toBe('         ');
     expect(result.current.updateBoard).toBeDefined();
-    expect(result.current.winner).toBe('?');
     expect(fetch).not.toBeCalled();
-    expect(result.current.match).toMatchSnapshot();
+    expect(result.current).toMatchSnapshot();
   });
 
   test('if board is updated and it is my turn, a new board is returned', async () => {
@@ -62,6 +60,22 @@ describe('useBoard', () => {
       expect(fetch).toBeCalledTimes(3);
       expect((fetch as FetchMock).mock.calls).toMatchSnapshot();
       expect(result.current.match).toMatchSnapshot();
+    });
+  });
+
+  test('that I can’t play when is not my turn', async () => {
+    (fetch as FetchMock).mockResponseOnce(JSON.stringify({ board: 'XO       ' }));
+
+    const { result } = renderHook(() => useBoard('easy'));
+
+    expect(result.current.updateBoard).toBeDefined();
+
+    act(() => result.current.updateBoard(0, 'X'));
+    act(() => result.current.updateBoard(3, 'X'));
+
+    await wait(() => {
+      expect(result.current.board).toBe('XO       ');
+      expect(result.current.board).not.toBe('XOX      ');
     });
   });
 });
