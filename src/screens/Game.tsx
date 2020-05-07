@@ -7,6 +7,7 @@ import { t } from 'react-native-tailwindcss';
 import { MainStackParamList } from '../Router';
 import Background from '../components/Background';
 import TicTacToe from '../components/TicTacToe';
+import SymbolIndicator from '../components/SymbolIndicator';
 
 const s = {
   wrapper: [t.hFull, t.wFull],
@@ -32,6 +33,8 @@ const Game: React.FC<GameProps> = ({ navigation, route }) => {
           </TouchableOpacity>
         </View>
         <View style={s.contentContainer}>
+          <SymbolIndicator />
+          <View style={{ marginBottom: 50 }} />
           <TicTacToe difficulty={route.params.difficulty} />
         </View>
       </SafeAreaView>
