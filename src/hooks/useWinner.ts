@@ -58,7 +58,7 @@ export function checkVictory(args: CheckVictoryArgs) {
   }
 
   const c3 = board.charAt(p3);
-  if (c1 != c3) {
+  if (c1 !== c3) {
     return false;
   }
 
@@ -74,8 +74,15 @@ export function checkVictory(args: CheckVictoryArgs) {
  */
 export function useWinner(board: string) {
   const [winner, setWinner] = useState<Winner>('?');
+  const [isEvaluating, setIsEvaluating] = useState(false);
 
   useEffect(() => {
+    if (board === '         ') {
+      return;
+    }
+
+    setIsEvaluating(true);
+
     checkVictory({ board, setWinner, p1: 0, p2: 1, p3: 2 }) || // check for 3-in-a-row horizontally
     checkVictory({ board, setWinner, p1: 3, p2: 4, p3: 5 }) ||
     checkVictory({ board, setWinner, p1: 6, p2: 7, p3: 8 }) ||
@@ -85,7 +92,11 @@ export function useWinner(board: string) {
     checkVictory({ board, setWinner, p1: 0, p2: 4, p3: 8 }) || // check for 3-in-a-row diagonally
       checkVictory({ board, setWinner, p1: 6, p2: 4, p3: 2 }) ||
       checkStalemate({ board, setWinner });
+
+    setIsEvaluating(false);
+
+    return () => {};
   }, [board]);
 
-  return winner;
+  return { winner, isEvaluating };
 }

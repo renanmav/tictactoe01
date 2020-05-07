@@ -13,12 +13,17 @@ export function useBoard(difficulty: Difficulties) {
   const [board, setBoard] = useState('         ');
   const [isMyTurn, setIsMyTurn] = useState(true);
 
-  const winner = useWinner(board);
+  const { winner, isEvaluating } = useWinner(board);
 
   useEffect(() => {
-    if (isMyTurn || winner !== '?') {
+    let isCurrent = true;
+
+    if (isMyTurn || winner !== '?' || isEvaluating) {
       return;
     }
+
+    setIsMyTurn(true);
+
     (async () => {
       const body = {
         board,
@@ -32,11 +37,16 @@ export function useBoard(difficulty: Difficulties) {
         },
       });
       const data = await resp.json();
-
-      setIsMyTurn(true);
-      setBoard(data.board);
+      if (isCurrent) {
+        setBoard(data.board);
+      }
     })();
-  }, [board, difficulty, isMyTurn, winner]);
+
+    return () => {
+      isCurrent = false;
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [winner, board]);
 
   function updateBoard(index: number, symbol: 'X' | 'O') {
     if (!isMyTurn || winner !== '?') {

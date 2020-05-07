@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`useBoard if board is updated and it is my turn, a new board is returned 1`] = `
+Array [
+  Array [
+    "https://tictactoe.api.01card.com.br",
+    Object {
+      "body": "{\\"board\\":\\"X        \\",\\"level\\":\\"easy\\"}",
+      "headers": Object {
+        "authorization": "Bearer ck9tzriy6000201l19kdy5d4i",
+      },
+      "method": "POST",
+    },
+  ],
+]
+`;
+
+exports[`useBoard if there is a winner, it should not fetch API 1`] = `
+Array [
+  Array [
+    "https://tictactoe.api.01card.com.br",
+    Object {
+      "body": "{\\"board\\":\\"X        \\",\\"level\\":\\"easy\\"}",
+      "headers": Object {
+        "authorization": "Bearer ck9tzriy6000201l19kdy5d4i",
+      },
+      "method": "POST",
+    },
+  ],
+  Array [
+    "https://tictactoe.api.01card.com.br",
+    Object {
+      "body": "{\\"board\\":\\"XO  X    \\",\\"level\\":\\"easy\\"}",
+      "headers": Object {
+        "authorization": "Bearer ck9tzriy6000201l19kdy5d4i",
+      },
+      "method": "POST",
+    },
+  ],
+  Array [
+    "https://tictactoe.api.01card.com.br",
+    Object {
+      "body": "{\\"board\\":\\"XOO X   X\\",\\"level\\":\\"easy\\"}",
+      "headers": Object {
+        "authorization": "Bearer ck9tzriy6000201l19kdy5d4i",
+      },
+      "method": "POST",
+    },
+  ],
+]
+`;

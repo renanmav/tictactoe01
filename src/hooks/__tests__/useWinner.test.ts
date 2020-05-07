@@ -45,13 +45,13 @@ describe('checkVictory', () => {
   });
 });
 
-describe('useGameState', () => {
+describe('useWinner', () => {
   test('if "?" is returned when the game is not finished', () => {
     const board = 'X        ';
 
     const { result } = renderHook(() => useWinner(board));
 
-    expect(result.current).toBe('?');
+    expect(result.current.winner).toBe('?');
   });
 
   test('if "X" is returned when player X wins with 3-in-a-row horizontally', () => {
@@ -59,7 +59,7 @@ describe('useGameState', () => {
 
     const { result } = renderHook(() => useWinner(board));
 
-    expect(result.current).toBe('X');
+    expect(result.current.winner).toBe('X');
   });
 
   test('if "O" is returned when player O wins with 3-in-a-row vertically', () => {
@@ -67,7 +67,7 @@ describe('useGameState', () => {
 
     const { result } = renderHook(() => useWinner(board));
 
-    expect(result.current).toBe('O');
+    expect(result.current.winner).toBe('O');
   });
 
   test('if "C" is returned when a "cat" happens', () => {
@@ -75,6 +75,6 @@ describe('useGameState', () => {
 
     const { result } = renderHook(() => useWinner(board));
 
-    expect(result.current).toBe('C');
+    expect(result.current.winner).toBe('C');
   });
 });
