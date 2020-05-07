@@ -17,9 +17,10 @@ type Winner = '?' | 'X' | 'O' | 'C';
 interface CheckStalemateArgs {
   board: string;
   setWinner: Dispatch<SetStateAction<Winner>>;
+  setWinnerMatch: Dispatch<SetStateAction<number[]>>;
 }
 export function checkStalemate(args: CheckStalemateArgs) {
-  const { board, setWinner } = args;
+  const { board, setWinner, setWinnerMatch } = args;
 
   for (let i = 0; i < 9; i++) {
     if (board.charAt(i) === ' ') {
@@ -28,6 +29,7 @@ export function checkStalemate(args: CheckStalemateArgs) {
   }
 
   setWinner('C');
+  setWinnerMatch([]);
 }
 
 /**
@@ -40,12 +42,13 @@ export function checkStalemate(args: CheckStalemateArgs) {
 interface CheckVictoryArgs {
   board: string;
   setWinner: Dispatch<SetStateAction<Winner>>;
+  setWinnerMatch: Dispatch<SetStateAction<number[]>>;
   p1: number;
   p2: number;
   p3: number;
 }
 export function checkVictory(args: CheckVictoryArgs) {
-  const { board, setWinner, p1, p2, p3 } = args;
+  const { board, setWinner, setWinnerMatch, p1, p2, p3 } = args;
 
   const c1 = board.charAt(p1);
   if (c1 === ' ') {
@@ -63,6 +66,7 @@ export function checkVictory(args: CheckVictoryArgs) {
   }
 
   setWinner(c1 as Winner);
+  setWinnerMatch([p1, p2, p3]);
 }
 
 /**
@@ -75,6 +79,7 @@ export function checkVictory(args: CheckVictoryArgs) {
 export function useWinner(board: string) {
   const [winner, setWinner] = useState<Winner>('?');
   const [isEvaluating, setIsEvaluating] = useState(false);
+  const [winnerMatch, setWinnerMatch] = useState<number[]>([]);
 
   useEffect(() => {
     if (board === '         ') {
@@ -83,20 +88,20 @@ export function useWinner(board: string) {
 
     setIsEvaluating(true);
 
-    checkVictory({ board, setWinner, p1: 0, p2: 1, p3: 2 }) || // check for 3-in-a-row horizontally
-    checkVictory({ board, setWinner, p1: 3, p2: 4, p3: 5 }) ||
-    checkVictory({ board, setWinner, p1: 6, p2: 7, p3: 8 }) ||
-    checkVictory({ board, setWinner, p1: 0, p2: 3, p3: 6 }) || // check for 3-in-a-row vertically
-    checkVictory({ board, setWinner, p1: 1, p2: 4, p3: 7 }) ||
-    checkVictory({ board, setWinner, p1: 2, p2: 5, p3: 8 }) ||
-    checkVictory({ board, setWinner, p1: 0, p2: 4, p3: 8 }) || // check for 3-in-a-row diagonally
-      checkVictory({ board, setWinner, p1: 6, p2: 4, p3: 2 }) ||
-      checkStalemate({ board, setWinner });
+    checkVictory({ board, setWinner, setWinnerMatch, p1: 0, p2: 1, p3: 2 }) || // check for 3-in-a-row horizontally
+    checkVictory({ board, setWinner, setWinnerMatch, p1: 3, p2: 4, p3: 5 }) ||
+    checkVictory({ board, setWinner, setWinnerMatch, p1: 6, p2: 7, p3: 8 }) ||
+    checkVictory({ board, setWinner, setWinnerMatch, p1: 0, p2: 3, p3: 6 }) || // check for 3-in-a-row vertically
+    checkVictory({ board, setWinner, setWinnerMatch, p1: 1, p2: 4, p3: 7 }) ||
+    checkVictory({ board, setWinner, setWinnerMatch, p1: 2, p2: 5, p3: 8 }) ||
+    checkVictory({ board, setWinner, setWinnerMatch, p1: 0, p2: 4, p3: 8 }) || // check for 3-in-a-row diagonally
+      checkVictory({ board, setWinner, setWinnerMatch, p1: 6, p2: 4, p3: 2 }) ||
+      checkStalemate({ board, setWinner, setWinnerMatch });
 
     setIsEvaluating(false);
 
     return () => {};
   }, [board]);
 
-  return { winner, isEvaluating };
+  return { winner, isEvaluating, winnerMatch };
 }

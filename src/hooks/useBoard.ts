@@ -13,7 +13,7 @@ export function useBoard(difficulty: Difficulties) {
   const [board, setBoard] = useState('         ');
   const [isMyTurn, setIsMyTurn] = useState(true);
 
-  const { winner, isEvaluating } = useWinner(board);
+  const { winner, isEvaluating, winnerMatch } = useWinner(board);
 
   useEffect(() => {
     let isCurrent = true;
@@ -58,5 +58,5 @@ export function useBoard(difficulty: Difficulties) {
     setIsMyTurn(false);
   }
 
-  return { board, updateBoard, winner };
+  return { board, updateBoard, winner, match: winnerMatch };
 }

@@ -9,13 +9,14 @@ beforeEach(() => {
 });
 
 describe('useBoard', () => {
-  test('if board, updateBoard and winner are returned', () => {
+  test('if all fields are returned', () => {
     const { result } = renderHook(() => useBoard('easy'));
 
     expect(result.current.board).toBe('         ');
     expect(result.current.updateBoard).toBeDefined();
     expect(result.current.winner).toBe('?');
     expect(fetch).not.toBeCalled();
+    expect(result.current.match).toMatchSnapshot();
   });
 
   test('if board is updated and it is my turn, a new board is returned', async () => {
@@ -32,6 +33,7 @@ describe('useBoard', () => {
       expect(result.current.winner).toBe('?');
       expect(fetch).toBeCalledTimes(1);
       expect((fetch as FetchMock).mock.calls).toMatchSnapshot();
+      expect(result.current.match).toMatchSnapshot();
     });
   });
 
@@ -59,6 +61,7 @@ describe('useBoard', () => {
       expect(result.current.board).toBe('XOO X   X');
       expect(fetch).toBeCalledTimes(3);
       expect((fetch as FetchMock).mock.calls).toMatchSnapshot();
+      expect(result.current.match).toMatchSnapshot();
     });
   });
 });
