@@ -1,5 +1,5 @@
 import React from 'react';
-import { Image, Text, View } from 'react-native';
+import { Image, Text } from 'react-native';
 import { t } from 'react-native-tailwindcss';
 import { StackNavigationProp } from '@react-navigation/stack';
 
@@ -31,8 +31,8 @@ const Menu: React.FC<MenuProps> = ({ navigation }) => {
         colors={s.buttonColors}
         testID="button-jogar"
       />
-      <View style={[t.mB8]} />
-      <Button text="Ver placar" onPress={() => {}} colors={s.buttonColors} />
+      {/*<View style={[t.mB8]} />*/}
+      {/*<Button text="Ver placar" onPress={() => {}} colors={s.buttonColors} />*/}
     </Background>
   );
 };

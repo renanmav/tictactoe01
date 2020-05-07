@@ -1,36 +1,18 @@
 import React from 'react';
-import { View } from 'react-native';
-import { t } from 'react-native-tailwindcss';
 
-import TicTacToeField from './TicTacToeField';
+import { useBoard } from '../../hooks/useBoard';
+import { Difficulties } from '../../screens/SelectDifficulty';
 
-const s = {
-  board: [t.bgBlue800, t.wFull, t.rounded, t.flexRow, t.flexWrap, t.p1, { aspectRatio: 1 }],
-};
+import TicTacToeBoard from './TicTacToeBoard';
 
 interface TicTacToeProps {
-  board: string;
-  onPress(index: number): void;
+  difficulty: Difficulties;
 }
 
-const TicTacToe: React.FC<TicTacToeProps> = ({ board, onPress }) => {
-  if (board.length !== 9) {
-    throw new Error('Board should have 9 characters');
-  }
+const TicTacToe: React.FC<TicTacToeProps> = ({ difficulty }) => {
+  const { board, updateBoard, match } = useBoard(difficulty);
 
-  return (
-    <View style={s.board}>
-      {board.split('').map((symbol, index) => (
-        <TicTacToeField
-          key={index}
-          symbol={symbol as any}
-          onPress={() => {
-            onPress(index);
-          }}
-        />
-      ))}
-    </View>
-  );
+  return <TicTacToeBoard board={board} onPress={(i) => updateBoard(i, 'X')} match={match} />;
 };
 
 export default TicTacToe;
