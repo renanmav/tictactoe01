@@ -5,6 +5,7 @@
   "main": "node_modules/expo/AppEntry.js",
   "scripts": {
     "android": "expo start --android",
+    "build:web": "expo build:web",
     "eject": "expo eject",
     "ios": "expo start --ios",
     "lint": "eslint --fix --ext .js,jsx,.ts,.tsx",
@@ -33,9 +34,13 @@
     ]
   },
   "eslintConfig": {
+    "plugins": [
+      "no-only-tests"
+    ],
     "extends": "@react-native-community",
     "rules": {
-      "no-console": "error"
+      "no-console": "error",
+      "no-only-tests/no-only-tests": "error"
     }
   },
   "dependencies": {
@@ -64,6 +69,7 @@
     "@storybook/addons": "^5.3.18",
     "@storybook/react-native": "^5.3.18",
     "@testing-library/jest-native": "^3.1.0",
+    "@testing-library/react-hooks": "^3.2.1",
     "@testing-library/react-native": "^5.0.3",
     "@types/jest": "^25.2.1",
     "@types/react": "~16.9.23",
@@ -71,9 +77,11 @@
     "babel-loader": "^8.1.0",
     "babel-preset-expo": "~8.1.0",
     "eslint": "^6.8.0",
+    "eslint-plugin-no-only-tests": "^2.4.0",
     "husky": "^4.2.5",
     "jest": "^26.0.1",
     "jest-expo": "^37.0.0",
+    "jest-fetch-mock": "^3.0.3",
     "lint-staged": "^10.2.2",
     "prettier": "^2.0.5",
     "react-test-renderer": "^16.13.1",

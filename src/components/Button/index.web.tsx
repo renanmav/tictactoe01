@@ -4,7 +4,7 @@ import { t } from 'react-native-tailwindcss';
 import { LinearGradientProps } from 'expo-linear-gradient';
 
 const s = {
-  wrapper: [t.bgTransparent, t.itemsCenter, t.rounded, t.w2_12],
+  wrapper: [t.bgTransparent, t.itemsCenter, t.rounded, t.w5_12],
   buttonText: [t.textWhite, t.fontBold, t.textLg],
 };
 

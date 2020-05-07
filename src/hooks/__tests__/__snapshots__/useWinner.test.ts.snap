@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`useWinner if "?" is returned when the game is not finished 1`] = `Array []`;
+
+exports[`useWinner if "C" is returned when a "cat" happens 1`] = `Array []`;
+
+exports[`useWinner if "O" is returned when player O wins with 3-in-a-row vertically 1`] = `
+Array [
+  0,
+  3,
+  6,
+]
+`;
+
+exports[`useWinner if "X" is returned when player X wins with 3-in-a-row horizontally 1`] = `
+Array [
+  6,
+  7,
+  8,
+]
+`;
