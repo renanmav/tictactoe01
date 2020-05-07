@@ -6,7 +6,7 @@ import { storiesOf } from '@storybook/react-native';
 import { action } from '@storybook/addon-actions';
 
 import Button from '../../src/components/Button';
-import TicTacToe from '../../src/components/TicTacToe';
+import TicTacToeBoard from '../../src/components/TicTacToe/TicTacToeBoard';
 
 import { Space, CenterView } from './helpers';
 import Welcome from './Welcome';
@@ -27,9 +27,9 @@ storiesOf('Button', module)
 
 storiesOf('TicTacToe', module)
   .addDecorator((getStory) => <CenterView>{getStory()}</CenterView>)
-  .add('TicTacToe', () => (
+  .add('TicTacToeBoard', () => (
     <View style={{ margin: 20 }}>
-      <TicTacToe
+      <TicTacToeBoard
         board="X O     X"
         onPress={(i) => Alert.alert(`Clicou no ${(i + 1).toString()}° quadrado`)}
       />

@@ -16,7 +16,7 @@ const s = {
   buttonColors: [t.bgGreen700, t.bgGreen800],
 };
 
-type Difficulties = 'easy' | 'medium' | 'hard' | 'expert';
+export type Difficulties = 'easy' | 'medium' | 'hard' | 'expert';
 
 type SelectDifficultyScreenNavigationProp = StackNavigationProp<
   MainStackParamList,
@@ -33,7 +33,9 @@ const SelectDifficulty: React.FC<SelectDifficultyProps> = ({ navigation }) => {
     if (!difficulty) {
       return;
     }
-    navigation.navigate('Menu');
+    navigation.navigate('Game', {
+      difficulty,
+    });
   });
 
   return (
