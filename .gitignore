@@ -17,3 +17,6 @@ web-report/
 .vscode
 *error.log
 .editorconfig
+
+coverage/
+junit.xml
