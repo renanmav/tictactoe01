@@ -1,0 +1,705 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render correctly 1`] = `
+<Image
+  source={1}
+  style={
+    Array [
+      Object {
+        "bottom": 0,
+        "left": 0,
+        "position": "absolute",
+        "right": 0,
+        "top": 0,
+      },
+      Object {
+        "height": undefined,
+        "width": undefined,
+      },
+      undefined,
+    ]
+  }
+  testID="game"
+/>
+`;
+
+exports[`should render correctly 2`] = `
+<View
+  style={
+    Array [
+      Object {
+        "paddingHorizontal": 32,
+      },
+      Object {
+        "width": "100%",
+      },
+      Object {
+        "alignItems": "flex-start",
+      },
+      Object {
+        "marginVertical": 24,
+      },
+    ]
+  }
+  testID="game-top-container"
+>
+  <TouchableOpacity
+    activeOpacity={0.2}
+  >
+    <Image
+      source={1}
+      style={
+        Array [
+          Object {
+            "resizeMode": "contain",
+          },
+          Object {
+            "height": 35,
+            "width": 35,
+          },
+        ]
+      }
+    />
+  </TouchableOpacity>
+</View>
+`;
+
+exports[`should render correctly 3`] = `
+<View
+  style={
+    Array [
+      Object {
+        "paddingHorizontal": 32,
+      },
+      Object {
+        "flex": 1,
+      },
+      Object {
+        "justifyContent": "center",
+      },
+      Object {
+        "alignItems": "center",
+      },
+    ]
+  }
+  testID="game-content-container"
+>
+  <View
+    style={
+      Array [
+        Object {
+          "width": "100%",
+        },
+        Object {
+          "flexDirection": "row",
+        },
+      ]
+    }
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "width": "25%",
+          },
+          Object {
+            "alignItems": "center",
+          },
+          Object {
+            "justifyContent": "center",
+          },
+        ]
+      }
+    >
+      <Image
+        source={1}
+        style={
+          Array [
+            Object {
+              "resizeMode": "contain",
+            },
+            Object {
+              "marginBottom": 20,
+            },
+            Object {
+              "height": 50,
+              "width": 50,
+            },
+          ]
+        }
+      />
+      <Text
+        style={
+          Array [
+            Object {
+              "color": "#fff",
+            },
+            Object {
+              "fontSize": 20,
+            },
+            Object {
+              "fontWeight": "bold",
+            },
+          ]
+        }
+      >
+        Você
+      </Text>
+    </View>
+    <View
+      style={
+        Array [
+          Object {
+            "flexGrow": 1,
+          },
+        ]
+      }
+    />
+    <View
+      style={
+        Array [
+          Object {
+            "width": "25%",
+          },
+          Object {
+            "alignItems": "center",
+          },
+          Object {
+            "justifyContent": "center",
+          },
+        ]
+      }
+    >
+      <Image
+        source={1}
+        style={
+          Array [
+            Object {
+              "resizeMode": "contain",
+            },
+            Object {
+              "marginBottom": 20,
+            },
+            Object {
+              "height": 50,
+              "width": 50,
+            },
+          ]
+        }
+      />
+      <Text
+        style={
+          Array [
+            Object {
+              "color": "#fff",
+            },
+            Object {
+              "fontSize": 20,
+            },
+            Object {
+              "fontWeight": "bold",
+            },
+          ]
+        }
+      >
+        Bot
+      </Text>
+    </View>
+  </View>
+  <View
+    style={
+      Object {
+        "marginBottom": 50,
+      }
+    }
+  />
+  <View
+    style={
+      Array [
+        Object {
+          "backgroundColor": "#2D3748",
+        },
+        Object {
+          "width": "100%",
+        },
+        Object {
+          "borderRadius": 4,
+        },
+        Object {
+          "flexDirection": "row",
+        },
+        Object {
+          "flexWrap": "wrap",
+        },
+        Object {
+          "padding": 4,
+        },
+        Object {
+          "aspectRatio": 1,
+        },
+      ]
+    }
+    testID="tictactoe-board"
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "backgroundColor": "rgba(0,0,0,0)",
+          },
+          Object {
+            "width": "33.333333%",
+          },
+          Object {
+            "padding": 4,
+          },
+          Object {
+            "aspectRatio": 1,
+          },
+        ]
+      }
+    >
+      <TouchableWithoutFeedback
+        testID="field-touchable"
+      >
+        <View
+          style={
+            Array [
+              Array [
+                Object {
+                  "backgroundColor": "#242c3a",
+                },
+                Object {
+                  "borderRadius": 4,
+                },
+                Object {
+                  "flex": 1,
+                },
+                Object {
+                  "alignItems": "center",
+                },
+                Object {
+                  "justifyContent": "center",
+                },
+                Object {
+                  "overflow": "hidden",
+                },
+              ],
+              false,
+            ]
+          }
+          testID="field-background"
+        />
+      </TouchableWithoutFeedback>
+    </View>
+    <View
+      style={
+        Array [
+          Object {
+            "backgroundColor": "rgba(0,0,0,0)",
+          },
+          Object {
+            "width": "33.333333%",
+          },
+          Object {
+            "padding": 4,
+          },
+          Object {
+            "aspectRatio": 1,
+          },
+        ]
+      }
+    >
+      <TouchableWithoutFeedback
+        testID="field-touchable"
+      >
+        <View
+          style={
+            Array [
+              Array [
+                Object {
+                  "backgroundColor": "#242c3a",
+                },
+                Object {
+                  "borderRadius": 4,
+                },
+                Object {
+                  "flex": 1,
+                },
+                Object {
+                  "alignItems": "center",
+                },
+                Object {
+                  "justifyContent": "center",
+                },
+                Object {
+                  "overflow": "hidden",
+                },
+              ],
+              false,
+            ]
+          }
+          testID="field-background"
+        />
+      </TouchableWithoutFeedback>
+    </View>
+    <View
+      style={
+        Array [
+          Object {
+            "backgroundColor": "rgba(0,0,0,0)",
+          },
+          Object {
+            "width": "33.333333%",
+          },
+          Object {
+            "padding": 4,
+          },
+          Object {
+            "aspectRatio": 1,
+          },
+        ]
+      }
+    >
+      <TouchableWithoutFeedback
+        testID="field-touchable"
+      >
+        <View
+          style={
+            Array [
+              Array [
+                Object {
+                  "backgroundColor": "#242c3a",
+                },
+                Object {
+                  "borderRadius": 4,
+                },
+                Object {
+                  "flex": 1,
+                },
+                Object {
+                  "alignItems": "center",
+                },
+                Object {
+                  "justifyContent": "center",
+                },
+                Object {
+                  "overflow": "hidden",
+                },
+              ],
+              false,
+            ]
+          }
+          testID="field-background"
+        />
+      </TouchableWithoutFeedback>
+    </View>
+    <View
+      style={
+        Array [
+          Object {
+            "backgroundColor": "rgba(0,0,0,0)",
+          },
+          Object {
+            "width": "33.333333%",
+          },
+          Object {
+            "padding": 4,
+          },
+          Object {
+            "aspectRatio": 1,
+          },
+        ]
+      }
+    >
+      <TouchableWithoutFeedback
+        testID="field-touchable"
+      >
+        <View
+          style={
+            Array [
+              Array [
+                Object {
+                  "backgroundColor": "#242c3a",
+                },
+                Object {
+                  "borderRadius": 4,
+                },
+                Object {
+                  "flex": 1,
+                },
+                Object {
+                  "alignItems": "center",
+                },
+                Object {
+                  "justifyContent": "center",
+                },
+                Object {
+                  "overflow": "hidden",
+                },
+              ],
+              false,
+            ]
+          }
+          testID="field-background"
+        />
+      </TouchableWithoutFeedback>
+    </View>
+    <View
+      style={
+        Array [
+          Object {
+            "backgroundColor": "rgba(0,0,0,0)",
+          },
+          Object {
+            "width": "33.333333%",
+          },
+          Object {
+            "padding": 4,
+          },
+          Object {
+            "aspectRatio": 1,
+          },
+        ]
+      }
+    >
+      <TouchableWithoutFeedback
+        testID="field-touchable"
+      >
+        <View
+          style={
+            Array [
+              Array [
+                Object {
+                  "backgroundColor": "#242c3a",
+                },
+                Object {
+                  "borderRadius": 4,
+                },
+                Object {
+                  "flex": 1,
+                },
+                Object {
+                  "alignItems": "center",
+                },
+                Object {
+                  "justifyContent": "center",
+                },
+                Object {
+                  "overflow": "hidden",
+                },
+              ],
+              false,
+            ]
+          }
+          testID="field-background"
+        />
+      </TouchableWithoutFeedback>
+    </View>
+    <View
+      style={
+        Array [
+          Object {
+            "backgroundColor": "rgba(0,0,0,0)",
+          },
+          Object {
+            "width": "33.333333%",
+          },
+          Object {
+            "padding": 4,
+          },
+          Object {
+            "aspectRatio": 1,
+          },
+        ]
+      }
+    >
+      <TouchableWithoutFeedback
+        testID="field-touchable"
+      >
+        <View
+          style={
+            Array [
+              Array [
+                Object {
+                  "backgroundColor": "#242c3a",
+                },
+                Object {
+                  "borderRadius": 4,
+                },
+                Object {
+                  "flex": 1,
+                },
+                Object {
+                  "alignItems": "center",
+                },
+                Object {
+                  "justifyContent": "center",
+                },
+                Object {
+                  "overflow": "hidden",
+                },
+              ],
+              false,
+            ]
+          }
+          testID="field-background"
+        />
+      </TouchableWithoutFeedback>
+    </View>
+    <View
+      style={
+        Array [
+          Object {
+            "backgroundColor": "rgba(0,0,0,0)",
+          },
+          Object {
+            "width": "33.333333%",
+          },
+          Object {
+            "padding": 4,
+          },
+          Object {
+            "aspectRatio": 1,
+          },
+        ]
+      }
+    >
+      <TouchableWithoutFeedback
+        testID="field-touchable"
+      >
+        <View
+          style={
+            Array [
+              Array [
+                Object {
+                  "backgroundColor": "#242c3a",
+                },
+                Object {
+                  "borderRadius": 4,
+                },
+                Object {
+                  "flex": 1,
+                },
+                Object {
+                  "alignItems": "center",
+                },
+                Object {
+                  "justifyContent": "center",
+                },
+                Object {
+                  "overflow": "hidden",
+                },
+              ],
+              false,
+            ]
+          }
+          testID="field-background"
+        />
+      </TouchableWithoutFeedback>
+    </View>
+    <View
+      style={
+        Array [
+          Object {
+            "backgroundColor": "rgba(0,0,0,0)",
+          },
+          Object {
+            "width": "33.333333%",
+          },
+          Object {
+            "padding": 4,
+          },
+          Object {
+            "aspectRatio": 1,
+          },
+        ]
+      }
+    >
+      <TouchableWithoutFeedback
+        testID="field-touchable"
+      >
+        <View
+          style={
+            Array [
+              Array [
+                Object {
+                  "backgroundColor": "#242c3a",
+                },
+                Object {
+                  "borderRadius": 4,
+                },
+                Object {
+                  "flex": 1,
+                },
+                Object {
+                  "alignItems": "center",
+                },
+                Object {
+                  "justifyContent": "center",
+                },
+                Object {
+                  "overflow": "hidden",
+                },
+              ],
+              false,
+            ]
+          }
+          testID="field-background"
+        />
+      </TouchableWithoutFeedback>
+    </View>
+    <View
+      style={
+        Array [
+          Object {
+            "backgroundColor": "rgba(0,0,0,0)",
+          },
+          Object {
+            "width": "33.333333%",
+          },
+          Object {
+            "padding": 4,
+          },
+          Object {
+            "aspectRatio": 1,
+          },
+        ]
+      }
+    >
+      <TouchableWithoutFeedback
+        testID="field-touchable"
+      >
+        <View
+          style={
+            Array [
+              Array [
+                Object {
+                  "backgroundColor": "#242c3a",
+                },
+                Object {
+                  "borderRadius": 4,
+                },
+                Object {
+                  "flex": 1,
+                },
+                Object {
+                  "alignItems": "center",
+                },
+                Object {
+                  "justifyContent": "center",
+                },
+                Object {
+                  "overflow": "hidden",
+                },
+              ],
+              false,
+            ]
+          }
+          testID="field-background"
+        />
+      </TouchableWithoutFeedback>
+    </View>
+  </View>
+</View>
+`;

@@ -25,14 +25,14 @@ interface GameProps {
 
 const Game: React.FC<GameProps> = ({ navigation, route }) => {
   return (
-    <Background>
+    <Background testID="game">
       <SafeAreaView style={s.wrapper}>
-        <View style={s.topContainer}>
+        <View style={s.topContainer} testID="game-top-container">
           <TouchableOpacity onPress={() => navigation.goBack()}>
             <Image source={require('../../assets/left-arrow.png')} style={s.leftArrow} />
           </TouchableOpacity>
         </View>
-        <View style={s.contentContainer}>
+        <View style={s.contentContainer} testID="game-content-container">
           <SymbolIndicator />
           <View style={{ marginBottom: 50 }} />
           <TicTacToe difficulty={route.params.difficulty} />
