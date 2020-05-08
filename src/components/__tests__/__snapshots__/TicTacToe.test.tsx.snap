@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should consider the difficulty prop correctly 1`] = `
+Array [
+  Array [
+    "https://tictactoe.api.01card.com.br",
+    Object {
+      "body": "{\\"board\\":\\"X        \\",\\"level\\":\\"easy\\"}",
+      "headers": Object {
+        "authorization": "Bearer ck9tzriy6000201l19kdy5d4i",
+      },
+      "method": "POST",
+    },
+  ],
+]
+`;

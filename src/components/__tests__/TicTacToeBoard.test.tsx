@@ -35,3 +35,11 @@ it('should render fields with different colors based on match prop', async () =>
 
   expect(getByTestId('tictactoe-board')).toMatchSnapshot();
 });
+
+it('should throw an error if board props don’t have exactly 9 characters', async () => {
+  try {
+    render(<TicTacToeBoard board="X" onPress={jest.fn} match={[]} />);
+  } catch (error) {
+    expect(error.message).toBe('Board should have 9 characters');
+  }
+});
