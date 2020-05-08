@@ -1,8 +1,8 @@
 import React from 'react';
+import { View } from 'react-native';
 import { render } from '@testing-library/react-native';
 
 import Background from '../Background';
-import { View } from 'react-native';
 
 it('should render children', async () => {
   const { getByTestId, baseElement } = render(
