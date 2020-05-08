@@ -82,6 +82,7 @@
     "jest": "^26.0.1",
     "jest-expo": "^37.0.0",
     "jest-fetch-mock": "^3.0.3",
+    "jest-junit": "^10.0.0",
     "lint-staged": "^10.2.2",
     "prettier": "^2.0.5",
     "react-test-renderer": "^16.13.1",

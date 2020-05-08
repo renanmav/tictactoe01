@@ -29,4 +29,10 @@ jobs:
           yarn install --frozen-lockfile --production=false --non-interactive --cache-folder $(yarn cache dir)
       - name: Test
         run: |
-          yarn test
+          yarn test --ci --coverage --reporters=jest-junit
+        env:
+          JEST_SUITE_NAME: 'tictactoe01 tests'
+          JEST_JUNIT_OUTPUT_DIR: './reports'
+      - uses: codecov/codecov-action@v1.0.6
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
