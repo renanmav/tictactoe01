@@ -17,5 +17,6 @@ export function useReplay(winner: Winner, restart: () => void) {
         ]
       );
     }
-  }, [winner, restart]);
+    // eslint-disable-next-line
+  }, [winner]);
 }

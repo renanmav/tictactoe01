@@ -8,5 +8,6 @@ export function useReplay(winner: Winner, restart: () => void) {
       alert(winner === 'C' ? 'Deu velha' : `Jogador ${winner} ganhou`);
       restart();
     }
-  }, [winner, restart]);
+    // eslint-disable-next-line
+  }, [winner]);
 }
