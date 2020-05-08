@@ -1,11 +1,56 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`should correctly use the select difficulty to fetch API 1`] = `
+exports[`should correctly use the easy difficulty to fetch API 1`] = `
 Array [
   Array [
     "https://tictactoe.api.01card.com.br",
     Object {
       "body": "{\\"board\\":\\"X        \\",\\"level\\":\\"easy\\"}",
+      "headers": Object {
+        "authorization": "Bearer ck9tzriy6000201l19kdy5d4i",
+      },
+      "method": "POST",
+    },
+  ],
+]
+`;
+
+exports[`should correctly use the expert difficulty to fetch API 1`] = `
+Array [
+  Array [
+    "https://tictactoe.api.01card.com.br",
+    Object {
+      "body": "{\\"board\\":\\"X        \\",\\"level\\":\\"expert\\"}",
+      "headers": Object {
+        "authorization": "Bearer ck9tzriy6000201l19kdy5d4i",
+      },
+      "method": "POST",
+    },
+  ],
+]
+`;
+
+exports[`should correctly use the hard difficulty to fetch API 1`] = `
+Array [
+  Array [
+    "https://tictactoe.api.01card.com.br",
+    Object {
+      "body": "{\\"board\\":\\"X        \\",\\"level\\":\\"hard\\"}",
+      "headers": Object {
+        "authorization": "Bearer ck9tzriy6000201l19kdy5d4i",
+      },
+      "method": "POST",
+    },
+  ],
+]
+`;
+
+exports[`should correctly use the medium difficulty to fetch API 1`] = `
+Array [
+  Array [
+    "https://tictactoe.api.01card.com.br",
+    Object {
+      "body": "{\\"board\\":\\"X        \\",\\"level\\":\\"medium\\"}",
       "headers": Object {
         "authorization": "Bearer ck9tzriy6000201l19kdy5d4i",
       },

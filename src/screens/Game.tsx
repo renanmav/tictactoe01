@@ -28,7 +28,7 @@ const Game: React.FC<GameProps> = ({ navigation, route }) => {
     <Background testID="game">
       <SafeAreaView style={s.wrapper}>
         <View style={s.topContainer} testID="game-top-container">
-          <TouchableOpacity onPress={() => navigation.goBack()}>
+          <TouchableOpacity onPress={() => navigation.goBack()} testID="game-go-back">
             <Image source={require('../../assets/left-arrow.png')} style={s.leftArrow} />
           </TouchableOpacity>
         </View>

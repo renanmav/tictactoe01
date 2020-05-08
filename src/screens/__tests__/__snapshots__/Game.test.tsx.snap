@@ -45,6 +45,7 @@ exports[`should render correctly 2`] = `
 >
   <TouchableOpacity
     activeOpacity={0.2}
+    testID="game-go-back"
   >
     <Image
       source={1}
