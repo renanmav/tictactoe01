@@ -19,3 +19,5 @@ Array [
   8,
 ]
 `;
+
+exports[`useWinner if reset works 1`] = `Array []`;

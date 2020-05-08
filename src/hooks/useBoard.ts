@@ -13,7 +13,7 @@ export function useBoard(difficulty: Difficulties) {
   const [board, setBoard] = useState('         ');
   const [isMyTurn, setIsMyTurn] = useState(true);
 
-  const { winner, isEvaluating, winnerMatch } = useWinner(board);
+  const { winner, isEvaluating, winnerMatch, reset } = useWinner(board);
 
   useEffect(() => {
     let isCurrent = true;
@@ -48,7 +48,7 @@ export function useBoard(difficulty: Difficulties) {
   }, [winner, board]);
 
   function updateBoard(index: number, symbol: 'X' | 'O') {
-    if (!isMyTurn || winner !== '?') {
+    if (!isMyTurn || winner !== '?' || board.charAt(index) !== ' ') {
       return;
     }
     // @ts-ignore
@@ -57,5 +57,11 @@ export function useBoard(difficulty: Difficulties) {
     setIsMyTurn(false);
   }
 
-  return { board, updateBoard, winner, match: winnerMatch };
+  function restart() {
+    setIsMyTurn(true);
+    setBoard('         ');
+    reset();
+  }
+
+  return { board, updateBoard, winner, match: winnerMatch, restart };
 }

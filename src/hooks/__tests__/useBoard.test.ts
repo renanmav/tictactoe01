@@ -78,4 +78,20 @@ describe('useBoard', () => {
       expect(result.current.board).not.toBe('XOX      ');
     });
   });
+
+  test('that I can’t update the board if the field isn’t empty', async () => {
+    (fetch as FetchMock).mockResponseOnce(JSON.stringify({ board: 'XO       ' }));
+
+    const { result } = renderHook(() => useBoard('easy'));
+
+    expect(result.current.updateBoard).toBeDefined();
+
+    act(() => result.current.updateBoard(0, 'X'));
+    act(() => result.current.updateBoard(1, 'X'));
+
+    await wait(() => {
+      expect(result.current.board).toBe('XO       ');
+      expect(result.current.board).not.toBe('XX       ');
+    });
+  });
 });

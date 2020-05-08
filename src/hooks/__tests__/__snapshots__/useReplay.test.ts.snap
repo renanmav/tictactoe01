@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`useReplay if Alert.alert is called when the winner is "C" (for cat) 1`] = `
+Array [
+  Array [
+    "Que pena",
+    "Deu velha",
+    Array [
+      Object {
+        "onPress": [MockFunction],
+        "text": "Jogar novamente",
+      },
+    ],
+  ],
+]
+`;
+
+exports[`useReplay if Alert.alert is called when the winner is "O" 1`] = `
+Array [
+  Array [
+    "Que pena",
+    "Jogador O ganhou",
+    Array [
+      Object {
+        "onPress": [MockFunction],
+        "text": "Jogar novamente",
+      },
+    ],
+  ],
+]
+`;
+
+exports[`useReplay if Alert.alert is called when the winner is "X" 1`] = `
+Array [
+  Array [
+    "Parabéns",
+    "Jogador X ganhou",
+    Array [
+      Object {
+        "onPress": [MockFunction],
+        "text": "Jogar novamente",
+      },
+    ],
+  ],
+]
+`;
