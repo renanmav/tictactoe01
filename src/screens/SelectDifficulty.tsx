@@ -42,7 +42,7 @@ const SelectDifficulty: React.FC<SelectDifficultyProps> = ({ navigation }) => {
     <Background>
       <SafeAreaView style={s.wrapper}>
         <View style={s.topContainer}>
-          <TouchableOpacity onPress={() => navigation.goBack()}>
+          <TouchableOpacity onPress={() => navigation.goBack()} testID="select-difficulty-go-back">
             <Image source={require('../../assets/left-arrow.png')} style={s.leftArrow} />
           </TouchableOpacity>
         </View>

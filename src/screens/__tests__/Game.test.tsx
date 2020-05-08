@@ -15,3 +15,17 @@ it('should render correctly', async () => {
     expect(getByTestId('game-content-container')).toMatchSnapshot();
   });
 });
+
+it('should go back and left arrow is pressed', async () => {
+  const { getByText, getByTestId } = render(<Router />);
+
+  fireEvent.press(getByText('Jogar'));
+  fireEvent.press(getByText('Fácil'));
+
+  fireEvent.press(getByTestId('game-go-back'));
+
+  await wait(() => {
+    expect(fetch).not.toBeCalled();
+    expect(getByText('Fácil')).toBeDefined();
+  });
+});

@@ -1,4 +1,4 @@
-import { renderHook } from '@testing-library/react-hooks';
+import { act, renderHook } from '@testing-library/react-hooks';
 
 import { useWinner, checkStalemate, checkVictory } from '../useWinner';
 
@@ -86,6 +86,17 @@ describe('useWinner', () => {
     const { result } = renderHook(() => useWinner(board));
 
     expect(result.current.winner).toBe('C');
+    expect(result.current.winnerMatch).toMatchSnapshot();
+  });
+
+  test('if reset works', () => {
+    const board = 'XOXXXOOOX';
+
+    const { result } = renderHook(() => useWinner(board));
+
+    act(() => result.current.reset());
+
+    expect(result.current.winner).toBe('?');
     expect(result.current.winnerMatch).toMatchSnapshot();
   });
 });

@@ -7,7 +7,7 @@ import { Dispatch, SetStateAction, useEffect, useState } from 'react';
  *    'O' if game has been won by O
  *    'C' if game has been won by 'cat' (no moves left, but no winner)
  */
-type Winner = '?' | 'X' | 'O' | 'C';
+export type Winner = '?' | 'X' | 'O' | 'C';
 
 /**
  * checkStalemate
@@ -103,5 +103,10 @@ export function useWinner(board: string) {
     return () => {};
   }, [board]);
 
-  return { winner, isEvaluating, winnerMatch };
+  function reset() {
+    setWinnerMatch([]);
+    setWinner('?');
+  }
+
+  return { winner, isEvaluating, winnerMatch, reset };
 }

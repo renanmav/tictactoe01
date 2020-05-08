@@ -4,6 +4,7 @@ exports[`useBoard if all fields are returned 1`] = `
 Object {
   "board": "         ",
   "match": Array [],
+  "restart": [Function],
   "updateBoard": [Function],
   "winner": "?",
 }

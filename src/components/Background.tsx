@@ -8,7 +8,7 @@ const s = {
 
 const { width, height } = Dimensions.get('window');
 
-const Background: React.FC<{ testID: string }> = ({ children, testID }) => {
+const Background: React.FC<{ testID?: string }> = ({ children, testID }) => {
   return (
     <ImageBackground
       source={require('../../assets/background.jpg')}
