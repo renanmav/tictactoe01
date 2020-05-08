@@ -5,6 +5,8 @@
 
 Tic tac toe challenge proposed by 01card to fill the React Native engineer position
 
+![preview](./assets/preview.png)
+
 ## Quick dependency walkthrough
 
 - [`expo`](https://github.com/expo/expo) because of their amazing SDK
