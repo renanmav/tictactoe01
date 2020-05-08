@@ -16,3 +16,15 @@ Tic tac toe challenge proposed by 01card to fill the React Native engineer posit
 - [`jest`](https://github.com/facebook/jest) and [`testing-library`](https://github.com/testing-library/native-testing-library) for testing
 - [`storybook`](https://github.com/storybookjs/storybook) for bullet proof component engineering and finally
 - [`typescript`](https://github.com/microsoft/TypeScript) just because...
+
+## Colocation
+
+If you don’t know what is colocation, read about it [here](https://kentcdodds.com/blog/colocation). Most of React components use this colocation:
+
+```
+<imports>
+
+<styles>
+
+<JSX>
+```
